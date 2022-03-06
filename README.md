@@ -2,6 +2,8 @@
 
 Show code highlights inside hexo codeblock
 
+[Install](https://marketplace.visualstudio.com/items?itemName=means88.vscode-hexo-tag-syntax)
+
 ## Usage
 
 ```
