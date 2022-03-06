@@ -9,6 +9,12 @@
   "categories": [
     "Programming Languages"
   ],
+  "publisher": "means88",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Means88/vscode-hexo-tag-syntax"
+  },
+  "license": "MIT",
   "contributes": {
     "languages": [
       {
