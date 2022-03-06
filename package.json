@@ -2,7 +2,7 @@
   "name": "vscode-hexo-tag-syntax",
   "displayName": "Hexo Tag Syntax",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -30,8 +30,12 @@
           "text.html.markdown"
         ],
         "embeddedLanguages": {
-          "meta.embedded.block.hexo-ts": "javascript",
-          "meta.embedded.block.hexo-tsx": "javascriptreact"
+          "meta.embedded.block.hexo-js": "javascript",
+          "meta.embedded.block.hexo-jsx": "javascriptreact",
+          "meta.embedded.block.hexo-ts": "typescript",
+          "meta.embedded.block.hexo-tsx": "typescriptreact",
+          "meta.embedded.block.hexo-json": "json",
+          "meta.embedded.block.hexo-jsonc": "jsonc"
         }
       }
     ]

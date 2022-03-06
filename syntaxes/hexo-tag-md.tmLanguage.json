@@ -9,12 +9,24 @@
       "include": "#hexo-tsx-code-block"
     },
     {
+      "include": "#hexo-js-code-block"
+    },
+    {
+      "include": "#hexo-jsx-code-block"
+    },
+    {
+      "include": "#hexo-json-code-block"
+    },
+    {
+      "include": "#hexo-jsonc-code-block"
+    },
+    {
       "include": "#hexo-unknown-code-block"
     }
   ],
   "repository": {
     "hexo-ts-code-block": {
-      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(typescript|ts)[^}]*)%}$",
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(typescript|ts)(\\s+[^}]*)?)%}$",
       "name": "markup.fenced_code.block.hexo",
       "end": "(^|\\G){%\\s*(endcodeblock)\\s*%}$",
       "beginCaptures": {
@@ -44,7 +56,7 @@
       ]
     },
     "hexo-tsx-code-block": {
-      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(tsx)[^}]*)%}$",
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(tsx)(\\s+[^}]*)?)%}$",
       "name": "markup.fenced_code.block.hexo",
       "end": "(^|\\G){%\\s*endcodeblock\\s*%}$",
       "beginCaptures": {
@@ -68,6 +80,126 @@
           "patterns": [
             {
               "include": "source.tsx"
+            }
+          ]
+        }
+      ]
+    },
+    "hexo-js-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(javascript|js)(\\s+[^}]*)?)%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*(endcodeblock)\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*{%\\s*endcodeblock\\s*%}\\s*$)",
+          "contentName": "meta.embedded.block.hexo-js",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    "hexo-jsx-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(jsx)(\\s+[^}]*)?)%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*endcodeblock\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*{%\\s*endcodeblock\\s*%}\\s*$)",
+          "contentName": "meta.embedded.block.hexo-jsx",
+          "patterns": [
+            {
+              "include": "source.jsx"
+            }
+          ]
+        }
+      ]
+    },
+    "hexo-json-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(json)(\\s+[^}]*)?)%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*endcodeblock\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*{%\\s*endcodeblock\\s*%}\\s*$)",
+          "contentName": "meta.embedded.block.hexo-json",
+          "patterns": [
+            {
+              "include": "source.json"
+            }
+          ]
+        }
+      ]
+    },
+    "hexo-jsonc-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(jsonc)(\\s+[^}]*)?)%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*endcodeblock\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*{%\\s*endcodeblock\\s*%}\\s*$)",
+          "contentName": "meta.embedded.block.hexo-jsonc",
+          "patterns": [
+            {
+              "include": "source.json.comments"
             }
           ]
         }
