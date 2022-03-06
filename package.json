@@ -2,9 +2,9 @@
   "name": "vscode-hexo-tag-syntax",
   "displayName": "Hexo Tag Syntax",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
-    "vscode": "^1.65.0"
+    "vscode": "^1.63.0"
   },
   "categories": [
     "Programming Languages"
