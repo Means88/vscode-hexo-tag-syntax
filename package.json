@@ -1,0 +1,33 @@
+{
+  "name": "vscode-hexo-tag-syntax",
+  "displayName": "Hexo Tag Syntax",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "hexo-ts-injection"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hexo-ts-injection",
+        "scopeName": "markdown.hexo-ts.codeblock",
+        "path": "./syntaxes/hexo-tag-md.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.hexo-ts": "javascript",
+          "meta.embedded.block.hexo-tsx": "javascriptreact"
+        }
+      }
+    ]
+  }
+}

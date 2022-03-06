@@ -1,0 +1,96 @@
+{
+  "fileTypes": [],
+  "injectionSelector": "L:text.html.markdown",
+  "patterns": [
+    {
+      "include": "#hexo-ts-code-block"
+    },
+    {
+      "include": "#hexo-tsx-code-block"
+    },
+    {
+      "include": "#hexo-unknown-code-block"
+    }
+  ],
+  "repository": {
+    "hexo-ts-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(typescript|ts)[^}]*)%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*(endcodeblock)\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*{%\\s*endcodeblock\\s*%}\\s*$)",
+          "contentName": "meta.embedded.block.hexo-ts",
+          "patterns": [
+            {
+              "include": "source.ts"
+            }
+          ]
+        }
+      ]
+    },
+    "hexo-tsx-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*lang:\\s*(?i:(tsx)[^}]*)%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*endcodeblock\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*{%\\s*endcodeblock\\s*%}\\s*$)",
+          "contentName": "meta.embedded.block.hexo-tsx",
+          "patterns": [
+            {
+              "include": "source.tsx"
+            }
+          ]
+        }
+      ]
+    },
+    "hexo-unknown-code-block": {
+      "begin": "(^|\\G)(\\s*){%\\s*(codeblock)\\s*[^}]*\\s*(lang:\\s*(?i:([\\w-]+)[^}]*))?%}$",
+      "name": "markup.fenced_code.block.hexo",
+      "end": "(^|\\G){%\\s*(endcodeblock)\\s*%}$",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword"
+        },
+        "5": {
+          "name": "constant.language"
+        }
+      },
+      "endCaptures": {
+        "2": {
+          "name": "keyword"
+        }
+      }
+    }
+  },
+  "scopeName": "markdown.hexo-ts.codeblock"
+}
